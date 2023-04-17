@@ -1,0 +1,599 @@
+apiVersion: v1
+entries:
+  argo-workflow:
+  - apiVersion: v1
+    created: "2023-04-17T15:04:27.053233837Z"
+    description: Chart to deploy argo-workflow
+    digest: 18352f2bdb7ed959f448cf61997d8617ac64085f1053aab26bf43c1d0ab25492
+    maintainers:
+    - email: pawan@devtron.ai
+      name: Pawan
+    name: argo-workflow
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/argo-workflow-0.1.3/argo-workflow-0.1.3.tgz
+    version: 0.1.3
+  argocd:
+  - apiVersion: v1
+    appVersion: 1.8.1
+    created: "2023-04-17T15:04:27.142735262Z"
+    description: Chart to deploy ACD
+    digest: 8504c4268e27ecb6e0e61cbe779b03e856454ca27de8203d50a7d57bb0ef5069
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: argocd
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/argocd-1.8.1/argocd-1.8.1.tgz
+    version: 1.8.1
+  argocd-certificate-refresh:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:27.275359747Z"
+    description: Helm chart to deploy argocd certificate refresh CronJob.
+    digest: ab1bdfbe803a9297d11ab3e95dd67f31834e9842d288ad0bb37ffda43630e82b
+    maintainers:
+    - email: ajay@devtron.ai
+      name: Ajay
+    name: argocd-certificate-refresh
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/argocd-certificate-refresh-0.10.4/argocd-certificate-refresh-0.10.4.tgz
+    version: 0.10.4
+  aws-ssm-agent-installer:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:27.388948305Z"
+    description: Chart to enable AWS SSM Agent on EKS nodes
+    digest: 8b1b1f7e3aeebb30a5c9035836bc372f271894f5a3ce91dfa643477ece27e288
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: aws-ssm-agent-installer
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/aws-ssm-agent-installer-0.10.4/aws-ssm-agent-installer-0.10.4.tgz
+    version: 0.10.4
+  caddy-reverse-proxy:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:27.488076843Z"
+    description: Helm chart to deploy caddy reverse proxy.
+    digest: f1ea6c348167bf72001d550540aed97afa9851ebb4a0684d987d249513b92e5a
+    maintainers:
+    - email: ajay@devtron.ai
+      name: Ajay
+    name: caddy-reverse-proxy
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/caddy-reverse-proxy-0.10.1/caddy-reverse-proxy-0.10.1.tgz
+    version: 0.10.1
+  calico:
+  - apiVersion: v1
+    created: "2023-04-17T15:04:27.622991132Z"
+    description: Chart to deploy calico networking
+    digest: bcec4110cbc64b6e72221e252b900747012fb785c20155e0eaa7aefbf1fc5971
+    name: calico
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/calico-0.1.1/calico-0.1.1.tgz
+    version: 0.1.1
+  clair:
+  - apiVersion: v1
+    appVersion: 3.0.0-pre
+    created: "2023-04-17T15:04:27.72891858Z"
+    description: Clair is an open source project for the static analysis of vulnerabilities
+      in application containers.
+    digest: 69a05003a71947fe7924f04713224eb0710becb30243bbf9b56ddcbbc1952128
+    home: https://coreos.com/clair
+    icon: https://cloud.githubusercontent.com/assets/343539/21630811/c5081e5c-d202-11e6-92eb-919d5999c77a.png
+    maintainers:
+    - email: jimmy.zelinskie@coreos.com
+      name: Jimmy Zelinskie
+    - email: pawan.mehta@devtron.ai
+      name: Pawan Kumar
+    name: clair
+    sources:
+    - https://github.com/coreos/clair
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/clair-0.1.9/clair-0.1.9.tgz
+    version: 0.1.9
+  cluster-essentials:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-04-17T15:04:27.885645098Z"
+    dependencies:
+    - condition: metrics-server.enabled
+      name: metrics-server
+      repository: https://kubernetes-sigs.github.io/metrics-server/
+      version: 3.x.x
+    - condition: cluster-autoscaler.enabled
+      name: cluster-autoscaler
+      repository: https://kubernetes.github.io/autoscaler
+      version: 9.x.x
+    - condition: rollout.enabled
+      name: rollout
+      repository: https://helm.devtron.ai
+      version: 0.13.*
+    - condition: keda.enabled
+      name: keda
+      repository: https://kedacore.github.io/charts
+      version: 2.5.*
+    - condition: kube-prometheus-stack.enabled
+      name: kube-prometheus-stack
+      repository: https://helm.devtron.ai
+      version: 19.x.x
+    - condition: aws-load-balancer-controller.enabled
+      name: aws-load-balancer-controller
+      repository: https://aws.github.io/eks-charts
+      version: 1.3.*
+    description: A Helm chart for Kubernetes which deploys most of the cluster essentials
+      needed by any cluster
+    digest: 7945588413a31938e54416a10644a58671f6765f29142a5b3973dff5b98b7fc0
+    icon: https://raw.githubusercontent.com/dheeth/helm-charts/master/assets/cluster-essentials.jpeg
+    name: cluster-essentials
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/kubernetes-sigs/metrics-server
+    - https://github.com/kubernetes/autoscaler
+    - https://github.com/devtron-labs/charts
+    - https://github.com/kedacore/charts
+    - https://github.com/aws/eks-charts
+    - https://github.com/bitnami/charts/tree/master/bitnami
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/cluster-essentials-0.1.1/cluster-essentials-0.1.1.tgz
+    version: 0.1.1
+  coralogix-fluentd:
+  - apiVersion: v1
+    appVersion: 1.1.6
+    created: "2023-04-17T15:04:28.002637061Z"
+    description: Modificated version of official FluentD image with support of integration
+      with Coralogix service.
+    digest: 2d4ab7fcaf0c487c44cd153be264d0f02f1868c7980278bd3d7beb449edaec6c
+    home: https://coralogix.com/
+    icon: https://coralogix.com/wp-content/uploads/2016/12/logos_yjmwij-2.png
+    keywords:
+    - FluentD
+    - logging
+    - Coralogix
+    maintainers:
+    - email: eldar@coralogix.com
+      name: Eldar Aliiev
+      url: https://www.facebook.com/e.aliiev
+    name: coralogix-fluentd
+    sources:
+    - https://github.com/coralogix/fluentd-coralogix-image/examples/helm
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/coralogix-fluentd-1.0.3/coralogix-fluentd-1.0.3.tgz
+    version: 1.0.3
+  devtron-backups:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-04-17T15:04:28.098243695Z"
+    description: A Helm chart for Devtron Backups
+    digest: ba8e81fc69621a810a56d864c39ef9fbb320c8bd9280003b55275dde845d2f22
+    name: devtron-backups
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/devtron-backups-0.1.3/devtron-backups-0.1.3.tgz
+    version: 0.1.3
+  devtron-generic-helm:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:28.232700282Z"
+    description: Chart to deploy any YAML file
+    digest: 9f750562f6a74d5dae71d55874f3939d7de6bbaadeae6fabe297180fe3e306d5
+    maintainers:
+    - email: prashant@devtron.ai
+      name: Prashant
+    name: devtron-generic-helm
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/devtron-generic-helm-0.10.1/devtron-generic-helm-0.10.1.tgz
+    version: 0.10.1
+  devtron-operator:
+  - apiVersion: v2
+    appVersion: 0.6.15
+    created: "2023-04-17T15:04:28.373725779Z"
+    dependencies:
+    - condition: argo-cd.enabled
+      name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 5.9.1
+    - condition: security.enabled
+      name: security
+      repository: https://helm.devtron.ai
+      version: 0.x.x
+    description: Chart to configure and install Devtron. Devtron is a Kubernetes Orchestration
+      system.
+    digest: 594349e6800bd71cd225587f608a5c35250ffdd45a50c8690d6ef54c0b330c55
+    home: https://devtron.ai
+    icon: https://s3-ap-southeast-1.amazonaws.com/devtron.ai/images/devtron-sqr-logo.png
+    keywords:
+    - Devtron
+    - Kubernetes
+    - Orchestration
+    - K8s
+    - Deployment
+    - argocd
+    - Hyperion
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: devtron-operator
+    sources:
+    - https://github.com/devtron-labs/charts
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/devtron-operator-0.22.53/devtron-operator-0.22.53.tgz
+    version: 0.22.53
+  dgraph:
+  - apiVersion: v1
+    appVersion: v21.12.0
+    created: "2023-04-17T15:04:28.479665627Z"
+    description: Dgraph is a horizontally scalable and distributed graph database,
+      providing ACID transactions, consistent replication and linearizable reads.
+    digest: adfe48a6167d1c450531217180a6cb9a1a65e748c3816a8afea8ba05aa2fe7f3
+    home: https://dgraph.io/
+    icon: https://dgraph.io/assets/images/logo.png
+    keywords:
+    - dgraph
+    - database
+    - Graph
+    - GraphQL
+    - nosql
+    maintainers:
+    - email: contact@dgraph.io
+      name: dgraph
+    name: dgraph
+    sources:
+    - https://github.com/dgraph-io/charts/
+    - https://github.com/dgraph-io/dgraph
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/dgraph-0.0.20/dgraph-0.0.20.tgz
+    version: 0.0.20
+  discord-alertmanager:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:28.596924091Z"
+    description: Helm chart to deploy webhook integration for sending alert manager
+      alerts on discord.
+    digest: ea94fdf08c0a278757309134881777f636bcdb2386da2607f075ccc7625e1d1a
+    maintainers:
+    - email: ajay@devtron.ai
+      name: Ajay
+    name: discord-alertmanager
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/discord-alertmanager-0.10.0/discord-alertmanager-0.10.0.tgz
+    version: 0.10.0
+  dt-kubewatch:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:28.706504444Z"
+    description: Chart to deploy Devtron Kubewatch
+    digest: 3f9c4442f2c84a4ff087900f0ee2adf5885034cd616715f12f065adb44c76b24
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: dt-kubewatch
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/dt-kubewatch-0.13.5/dt-kubewatch-0.13.5.tgz
+    version: 0.13.5
+  dt-secrets:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:28.816257697Z"
+    description: Chart to create Secrets
+    digest: 1ba7ed97d62695b8f8ef419fac36a3d041e2e4ebea58acdd61b2a84c9fe598d1
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: dt-secrets
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/dt-secrets-0.10.3/dt-secrets-0.10.3.tgz
+    version: 0.10.3
+  elasticsearch-curator:
+  - apiVersion: v2
+    appVersion: 5.8.4
+    created: "2023-04-17T15:04:28.930458956Z"
+    description: A Helm chart for Elasticsearch Curator
+    digest: 387bfcc7178333d2893304ffb7ed49412b21e3ea566b974752d05827bc6074df
+    home: https://github.com/elastic/curator
+    icon: https://helm.elastic.co/icons/elasticsearch.png
+    keywords:
+    - curator
+    - elasticsearch
+    - elasticsearch-curator
+    name: elasticsearch-curator
+    sources:
+    - https://github.com/bitnami/bitnami-docker-elasticsearch-curator
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/elasticsearch-curator-3.2.2/elasticsearch-curator-3.2.2.tgz
+    version: 3.2.2
+  gitsensor:
+  - apiVersion: v1
+    appVersion: 0.2.0
+    created: "2023-04-17T15:04:29.039622008Z"
+    description: Chart to deploy Devtron Gitsensor
+    digest: 7182776ce027af7ed1f2df16404db0ae890efbf8adc97f9b41821799d285f321
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: gitsensor
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/gitsensor-0.11.6/gitsensor-0.11.6.tgz
+    version: 0.11.6
+  knative-installer:
+  - apiVersion: v2
+    created: "2023-04-17T15:04:29.158446774Z"
+    description: Chart to install Knative on the cluster
+    digest: 43e08191091d32c9f29d3e28cd49899a6f242cff462eb03ed3bb2f562a83292d
+    name: knative-installer
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/knative-installer-0.1.0/knative-installer-0.1.0.tgz
+    version: 0.1.0
+  kube-prometheus-stack:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: 0.50.0
+    created: "2023-04-17T15:04:29.297904469Z"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://helm.devtron.ai
+      version: 3.5.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 2.0.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.17.*
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: 66e411c4b10739a99bcb2cab8557984527a1a25c7d069d136bd9e2f2feba0c19
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/kube-prometheus-stack-19.3.0/kube-prometheus-stack-19.3.0.tgz
+    version: 19.3.0
+  kube-state-metrics:
+  - apiVersion: v2
+    appVersion: 2.2.4
+    created: "2023-04-17T15:04:29.407300321Z"
+    description: Install kube-state-metrics to generate and expose cluster-level metrics
+    digest: 04e3275b331470329e3bb3216d7c9989f517b308a77e71df680a3689828f6646
+    home: https://github.com/kubernetes/kube-state-metrics/
+    keywords:
+    - metric
+    - monitoring
+    - prometheus
+    - kubernetes
+    maintainers:
+    - email: tariq.ibrahim@mulesoft.com
+      name: tariq1890
+    - email: manuel@rueg.eu
+      name: mrueg
+    name: kube-state-metrics
+    sources:
+    - https://github.com/kubernetes/kube-state-metrics/
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/kube-state-metrics-3.5.2/kube-state-metrics-3.5.2.tgz
+    version: 3.5.2
+  mautic:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2023-04-17T15:04:29.511989367Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://helm.wso2.com
+      version: 1.6.9
+    description: A Helm chart for Mautic
+    digest: 5986612a7a60461bbf58390f1170da6312556a08faf8b59eef4b403cee44619f
+    name: mautic
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/mautic-0.1.3/mautic-0.1.3.tgz
+    version: 0.1.3
+  nats-server:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:29.619096917Z"
+    description: Chart to deploy NATS Server
+    digest: 4cce323a9db11aabc54dec8bc4664ccd4336de0b5dd6fb62e885ed55ee696910
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: nats-server
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/nats-server-0.10.1/nats-server-0.10.1.tgz
+    version: 0.10.1
+  nats-streaming:
+  - apiVersion: v1
+    appVersion: 0.6.0
+    created: "2023-04-17T15:04:29.740720687Z"
+    description: A NATS Streaming cluster setup
+    digest: 43a9aeea08de8e634fcbb53b7d20aefce3a03b00f225e0c7f830e5c7ba8b9d18
+    home: https://nats.io/
+    keywords:
+    - NATS
+    - Messaging
+    - publish
+    - subscribe
+    - streaming
+    - cluster
+    - persistence
+    name: nats-streaming
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/nats-streaming-0.3.1/nats-streaming-0.3.1.tgz
+    version: 0.3.1
+  openvpn:
+  - apiVersion: v1
+    appVersion: 1.1.0
+    created: "2023-04-17T15:04:29.847242635Z"
+    description: A Helm chart to install an openvpn server inside a kubernetes cluster.  Certificate
+      generation is also part of the deployment, and this chart will generate client
+      keys as needed.
+    digest: 050c8a935c240bbc3f37e22b0e633965214e55b063b81c72ecccad4b9ea8cf0f
+    home: https://openvpn.net/index.php/open-source.html
+    icon: https://forums.openvpn.net/styles/openvpn/theme/images/ovpnlogo.png
+    keywords:
+    - openvpn
+    - vpn
+    - tunnel
+    - network
+    - service
+    - connectivity
+    - encryption
+    name: openvpn
+    sources:
+    - https://github.com/jfelten/openvpn-docker
+    - https://github.com/kubernetes/charts/tree/master/stable/openvpn
+    - https://github.com/jfelten/helm-charts
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/openvpn-4.2.5/openvpn-4.2.5.tgz
+    version: 4.2.5
+  prom2teams:
+  - apiVersion: v1
+    appVersion: 4.2.0
+    created: "2023-04-17T15:04:29.941684167Z"
+    description: prom2teams is a service built with Python that receives alert notifications
+      from a previously configured Prometheus Alertmanager instance and forwards it
+      to Microsoft Teams using defined connectors.
+    digest: 3265011d4f92a7aded080fc7ef79076788f2314300cc2a06bf3b26c983e53cbe
+    name: prom2teams
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/prom2teams-0.2.0/prom2teams-0.2.0.tgz
+    version: 0.2.0
+  rollout:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:30.067363542Z"
+    description: Chart to deploy Rollout
+    digest: f7548292fedd8113d05cae29dcd8358114c659acc6751c26d52848eff919ed2d
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: rollout
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/rollout-0.14.5/rollout-0.14.5.tgz
+    version: 0.14.5
+  secret-replicator:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:30.183705205Z"
+    description: Chart to create Secrets in multiple namespce
+    digest: 36b3502d7dfd7d58565a66c7dd4832c61382fdd9630c9a4a428b96c8c52221fc
+    maintainers:
+    - email: pawan@devtron.ai
+      name: Pawan
+    name: secret-replicator
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/secret-replicator-0.1.0/secret-replicator-0.1.0.tgz
+    version: 0.1.0
+  security:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-04-17T15:04:30.311659483Z"
+    dependencies:
+    - condition: clair.enabled
+      name: clair
+      repository: https://helm.devtron.ai
+      version: 0.x.x
+    description: A Helm chart for devtron to enable security integration
+    digest: f17836a80fa399bdf9fd66a4c266e005a6570766e5945202c79c62a7e2a79801
+    keywords:
+    - kubernetes
+    - security
+    - k8s
+    - scanning
+    - container registry
+    - image scanning
+    - source code scanning
+    name: security
+    sources:
+    - https://github.com/devtron-labs/charts
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/security-0.1.5/security-0.1.5.tgz
+    version: 0.1.5
+  svn-git-sync:
+  - apiVersion: v1
+    appVersion: 0.1.3
+    created: "2023-04-17T15:04:30.415224428Z"
+    description: This chart is used to sync SVN repo with a repo on remote git.
+    digest: b0ef48ac05e0311315346cecb7b2216037366add635ab15009a1ca85c7ed39a6
+    maintainers:
+    - email: pawan.mehta@devtron.ai
+      name: Pawan Kumar
+    name: svn-git-sync
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/svn-git-sync-0.1.3/svn-git-sync-0.1.3.tgz
+    version: 0.1.3
+  twistlock-defender:
+  - apiVersion: v1
+    created: "2023-04-17T15:04:30.541929704Z"
+    description: Twistlock Defender Daemon Set Helm Chart
+    digest: ce0af37fe82e0a6b1ba197e0f935b9660dcf39c03e14f1f5f4411697ce619be1
+    name: twistlock-defender
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/twistlock-defender-22.12.699/twistlock-defender-22.12.699.tgz
+    version: 22.12.699
+  winter-soldier:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2023-04-17T15:04:30.655178362Z"
+    description: Helm chart to deploy winter-soldier. Winter soldier can be used for
+      scheduled cleaning up of Kubernetes resources and scaledown kubernetes workloads
+      according to user defined time of the day and conditions.
+    digest: a4d273f00e4d85894e0a2458d7f5cd5953c002be1d0344defce6e90c5004aa97
+    maintainers:
+    - email: devops@devtron.ai
+      name: Devtron Devops Team
+    - email: ajay@devtron.ai
+      name: Ajay
+    name: winter-soldier
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/winter-soldier-0.10.4/winter-soldier-0.10.4.tgz
+    version: 0.10.4
+  zinc:
+  - apiVersion: v2
+    appVersion: v0.2.6
+    created: "2023-04-17T15:04:30.800732266Z"
+    description: Zinc is a search engine that does full text indexing. It is a lightweight
+      alternative to Elasticsearch and runs in less than 100 MB of RAM.
+    digest: 24d12148ba55dfd281e5cd73f70582ae3c4c1c65a3d4d9abc48b438601d1f840
+    name: zinc
+    sources:
+    - https://github.com/zinclabs/zinc
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/zinc-0.1.2/zinc-0.1.2.tgz
+    version: 0.1.2
+generated: "2023-04-17T15:04:30.800740466Z"
