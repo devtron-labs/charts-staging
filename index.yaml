@@ -175,6 +175,18 @@ entries:
   devtron-generic-helm:
   - apiVersion: v1
     appVersion: 0.1.0
+    created: "2023-04-27T07:39:02.198634019Z"
+    description: Chart to deploy any YAML file
+    digest: cc9f7e8fda75296711a0b765b880feff7c6ba8cdd7a755028ea4d5a71777e3bf
+    maintainers:
+    - email: prashant@devtron.ai
+      name: Prashant
+    name: devtron-generic-helm
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/devtron-generic-helm-0.10.13/devtron-generic-helm-0.10.13.tgz
+    version: 0.10.13
+  - apiVersion: v1
+    appVersion: 0.1.0
     created: "2023-04-25T16:00:19.534399531Z"
     description: Chart to deploy any YAML file
     digest: 3339d05ffdce71a782fe818ae0fe9a55277e36f41263e8545c1422ebabdcc612
@@ -728,4 +740,4 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/zinc-0.1.2/zinc-0.1.2.tgz
     version: 0.1.2
-generated: "2023-04-25T16:00:19.534495137Z"
+generated: "2023-04-27T07:39:02.198727926Z"
