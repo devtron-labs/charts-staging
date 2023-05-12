@@ -532,6 +532,18 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/elasticsearch-curator-3.2.2/elasticsearch-curator-3.2.2.tgz
     version: 3.2.2
+  fxtrt-job:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-05-12T13:00:07.834750729Z"
+    description: Runs generic limited-access Kubernetes jobs. Useful for dev teams
+      to run Dockerized, peer-reviewed migration jobs.
+    digest: ef8b85bb1794a5c88d5c4f0e802d620e582c11fa3ee1110305ca00fb95150999
+    name: fxtrt-job
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/fxtrt-job-0.1.0/fxtrt-job-0.1.0.tgz
+    version: 0.1.0
   gitsensor:
   - apiVersion: v1
     appVersion: 0.2.0
@@ -824,4 +836,4 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/zinc-0.1.2/zinc-0.1.2.tgz
     version: 0.1.2
-generated: "2023-05-03T07:45:11.601519097Z"
+generated: "2023-05-12T13:00:07.834879129Z"
