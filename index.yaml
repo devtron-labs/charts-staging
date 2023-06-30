@@ -589,6 +589,17 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/gitsensor-0.11.6/gitsensor-0.11.6.tgz
     version: 0.11.6
+  k8sresources:
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2023-06-30T13:54:56.11777625Z"
+    description: A Test Helm chart for Devtron
+    digest: 01f76652776347e86a9d506c5d7b9beab8dba7da8c5a08464ac8528a4aa41b1e
+    name: k8sresources
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/k8sresources-0.1.1/k8sresources-0.1.1.tgz
+    version: 0.1.1
   knative-installer:
   - apiVersion: v2
     created: "2023-04-17T15:04:29.158446774Z"
@@ -751,6 +762,18 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/openvpn-4.2.5/openvpn-4.2.5.tgz
     version: 4.2.5
+  platform-parameterised-job:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-06-30T13:54:56.238107594Z"
+    description: Runs generic limited-access Kubernetes jobs. Useful for dev teams
+      to run Dockerized, peer-reviewed migration jobs.
+    digest: 6cbc763f43d9bd2bcb4e0ed6f7762a5b2b8351af46eeb5446c8455785dab492d
+    name: platform-parameterised-job
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/platform-parameterised-job-0.1.2/platform-parameterised-job-0.1.2.tgz
+    version: 0.1.2
   prom2teams:
   - apiVersion: v1
     appVersion: 4.2.0
@@ -868,4 +891,4 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/zinc-0.1.2/zinc-0.1.2.tgz
     version: 0.1.2
-generated: "2023-05-30T13:27:23.77529954Z"
+generated: "2023-06-30T13:54:56.238264699Z"
