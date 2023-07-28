@@ -545,6 +545,17 @@ entries:
   fxtrt-job:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-07-28T13:13:21.216029956Z"
+    description: Runs generic limited-access Kubernetes jobs. Useful for dev teams
+      to run Dockerized, peer-reviewed migration jobs.
+    digest: 19ed1c66bc64dfcf077876c729f8273cf335024916ca8c842c2ab0f74cd966b4
+    name: fxtrt-job
+    type: application
+    urls:
+    - https://github.com/devtron-labs/charts-staging/releases/download/fxtrt-job-0.1.3/fxtrt-job-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-05-12T14:06:08.421462811Z"
     description: Runs generic limited-access Kubernetes jobs. Useful for dev teams
       to run Dockerized, peer-reviewed migration jobs.
@@ -902,4 +913,4 @@ entries:
     urls:
     - https://github.com/devtron-labs/charts-staging/releases/download/zinc-0.1.2/zinc-0.1.2.tgz
     version: 0.1.2
-generated: "2023-07-03T08:26:43.741701762Z"
+generated: "2023-07-28T13:13:21.216142563Z"
